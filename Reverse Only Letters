@@ -1,0 +1,17 @@
+    def reverseOnlyLetters(self, s: str) -> str:
+        chars = list(s)
+        reverse_chars = []
+        n = len(chars)    
+
+        end = n
+        for i in range(len(chars)):
+            if s[i].isalpha():
+                reverse_chars.append(s[i])
+        reverse_chars.reverse()
+        start = 0
+        j=0
+        for i in range(len(chars)):
+            if chars[i].isalpha():
+                chars[i] = reverse_chars[j]
+                j +=1
+        return ''.join(chars)

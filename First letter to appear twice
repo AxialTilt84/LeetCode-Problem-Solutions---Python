@@ -1,0 +1,7 @@
+class Solution:
+    def repeatedCharacter(self, s: str) -> str:
+        dic = {}
+        for i in range(len(s)):
+            if s[i] in dic:
+                return s[i]
+            dic[s[i]] = i

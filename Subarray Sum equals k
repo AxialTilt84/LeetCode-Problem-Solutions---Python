@@ -1,0 +1,11 @@
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        counts = defaultdict (int)
+        ans = prefix = 0
+        counts [0] = 1
+
+        for num in nums:
+            prefix = prefix + num
+            ans = ans + counts [prefix-k]
+            counts [prefix] = counts [prefix] + 1
+        return ans
